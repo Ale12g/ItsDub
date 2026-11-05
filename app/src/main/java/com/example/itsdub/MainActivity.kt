@@ -33,6 +33,10 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun PlantScreen(modifier: Modifier = Modifier) {
+    var inputText by remember { mutableStateOf("") }
+    var resultText by remember { mutableStateOf("Введите букву и нажмите кнопку") }
+
+
 
 }
 

@@ -63,7 +63,16 @@ fun PlantScreen(modifier: Modifier = Modifier) {
 
         Spacer(modifier = Modifier.height(16.dp))
 
+        Button(
+            onClick = {
+                resultText = checkPlant(inputText)
+            },
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text("Проверить")
+        }
 
+        Spacer(modifier = Modifier.height(24.dp))
 
         Text(
             text = resultText,

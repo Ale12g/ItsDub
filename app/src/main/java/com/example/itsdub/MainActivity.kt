@@ -36,8 +36,41 @@ fun PlantScreen(modifier: Modifier = Modifier) {
     var inputText by remember { mutableStateOf("") }
     var resultText by remember { mutableStateOf("Введите букву и нажмите кнопку") }
 
+    Column(
+        modifier = modifier
+            .fillMaxSize()
+            .padding(24.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+        Text(
+            text = "Определитель растения",
+            fontSize = 24.sp,
+            style = MaterialTheme.typography.headlineMedium
+        )
+
+        Spacer(modifier = Modifier.height(24.dp))
+
+        TextField(
+            value = inputText,
+            onValueChange = {
+                if (it.length <= 1) inputText = it
+            },
+            label = { Text("Введите букву") },
+
+            modifier = Modifier.fillMaxWidth()
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
 
 
+
+        Text(
+            text = resultText,
+            fontSize = 20.sp,
+            style = MaterialTheme.typography.bodyLarge
+        )
+    }
 }
 
 fun checkPlant(input: String): String {

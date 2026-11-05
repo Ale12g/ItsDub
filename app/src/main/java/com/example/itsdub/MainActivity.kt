@@ -31,6 +31,21 @@ class MainActivity : ComponentActivity() {
 }
 
 
+@Composable
+fun PlantScreen(modifier: Modifier = Modifier) {
+
+}
+
+fun checkPlant(input: String): String {
+    val letter = input.lowercase()
+
+    return when (letter) {
+        "d" -> "Это Дуб"
+        "" -> "Поле пустое. Введите букву."
+        else -> "Неизвестное растение (введена буква: $input)"
+    }
+}
+
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun PlantScreenPreview() {
